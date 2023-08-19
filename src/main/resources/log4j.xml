@@ -1,0 +1,13 @@
+<Configuration name="Log4j" status="ERROR" monitorInterval="5">
+    <Appenders>
+        <RollingFile name="Log" fileName="logs/hippodrome.log"
+                     filePattern="logs/hippodrome.%d{dd-MM-yyyy}.log"
+                     ignoreExceptions="false">
+       </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="LogToFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
