@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration status="ERROR" >
     <Appenders>
-        <RollingFile name="Log" fileName="logs/hippodrome.log"
+        <RollingFile name="LogToFile" fileName="logs/hippodrome.log"
                      filePattern="logs/hippodrome.%d{yyyy-MM-dd}.log"
                      ignoreExceptions="false">
             <PatternLayout pattern="%d %-5p %c: %m%n"/>

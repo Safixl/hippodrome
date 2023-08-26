@@ -4,6 +4,8 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+
+
 public class Main {
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
@@ -27,6 +29,7 @@ public class Main {
         }
 
         String winnerName = hippodrome.getWinner().getName();
+        LOGGER.info("Окончание скачек. Победитель: {}", winnerName);
         System.out.println("Победил " + winnerName + "!");
     }
 
