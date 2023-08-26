@@ -64,8 +64,18 @@ public class HorseTest {
     @Test
     void  moveTest (){
         try (MockedStatic<Horse> mockedStatic = mockStatic(Horse.class)){
-            new Horse("kol", 1, 10);
+            new Horse("kol", 1, 10).move();
             mockedStatic.verify(() -> Horse.getRandomDouble(0.2, 0.9));
+        }
+    }
+    @ParameterizedTest
+    @ValueSource (doubles = {0.1, 0.2, 0.99, 0,99999})
+    void  moveFormulaTest (double d){
+        try (MockedStatic<Horse> mockedStatic = mockStatic(Horse.class)){
+            Horse horse = new Horse("kol", 42, 1000);
+            mockedStatic.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(d);
+            horse.move();
+            assertEquals(1000+42*d, horse.getDistance());
         }
     }
 
